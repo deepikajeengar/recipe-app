@@ -1,18 +1,41 @@
-ul{position: fixed;
-    bottom: 0;
-    width: 100%;
+
+
+.profile-image{
+    width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 40px;
+    border: 3px solid rosybrown;
+    background-size: cover;
 }
 
-a i{
-    font-size: 30px;
-    color: black;
-}
+.custom-tab-button {
+    background-color: #f8d7da; /* Soft Coral color */
+    color: #4e4b47;  /* Dark grayish brown */
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
 
-.active{
-    background-color: transparent !important;
-}    
+  .custom-tab-button:hover {
+    background-color: #99edcc; /* Mint Green for hover */
+    color: #4e4b47; /* Dark brown text */
+  }
 
-.active i{
-    color: rgb(255, 56, 89) !important;
+  .custom-tab-button.active {
+    background-color: #ff6f61; /* Active tab color: Coral */
+    color: white;
+    box-shadow: 0px 5px 15px rgba(255, 111, 97, 0.4); /* Light shadow for active tab */
+  }
 
-}
+  .nav-pills .nav-link {
+    border: none;
+  }
+
+  li, ul {
+    margin: 10px;
+  }
