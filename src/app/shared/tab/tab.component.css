@@ -1,6 +1,8 @@
 ul{position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: #ecdcbf;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
 }
 
 a i{
@@ -52,6 +54,4 @@ button{
     transform: scale(1.05);
     transition: all 0.3s ease;
   }
-  
-
-  
+ 

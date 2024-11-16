@@ -1,7 +1,14 @@
-.custom-container{
-    background-image: url("https://img.freepik.com/premium-photo/food-ingredients-paper-white_182252-2665.jpg?w=360" );
-    min-height: 85vh;
-    min-width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+p{
+    color: brown;
+    font-family: "Eczar", serif;
+    font-size: 20px;
+}
+
+.container img{
+    height: 112px;
+    width: 100%;
+}
+
+.carousel{
+    margin: 10px;
 }

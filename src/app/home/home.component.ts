@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  searchQuery: any; 
-  onSearch(): void {
-    console.log("Search Query:", this.searchQuery);
-    this.searchQuery = null;
-}
+  
 }

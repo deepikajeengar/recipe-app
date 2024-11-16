@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg">
+
+
+
+    <div class="container-fluid">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <img src="https://cdn.pixabay.com/photo/2023/07/24/17/09/mexican-8147497_1280.png" width="70px"
+                class="rounded-circle">
+        </button>
+
+
+
+        <div class="offcanvas-image-container">
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="text-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-header">
+                    <img src="https://www.foodiesfeed.com/wp-content/uploads/2023/12/fruit-popsicles.jpg" width="360">
+                </div>
+                <div class="offcanvas-body">
+                    <h5>UNLIMITED RECIPIES 🍔..🥗..🍕.....</h5>
+                    <br>
+                    <h4>"Ready to Cook Up Something Delicious? 🍳✨"</h4>
+                    <h5 class="mb-5">Dive into a world of mouthwatering recipes and start creating your culinary
+                        masterpiece today! Let's get
+                        cooking!</h5>
+
+                    <h1>Explore Recipes</h1>
+                    <h2>🌮🥞🍝🥐🥪🍹</h2>
+                    <div class="d-flex justify-content-center gap-3" style="margin: 30px 100px 0 10px; padding: 5px;">
+                        <button type="button" class="btn px-4 py-2 rounded-pill fw-bold shadow"
+                            style="background: linear-gradient(45deg, #c6dbfd, #c2e9fb);">Log IN</button>
+                        <button type="button" class="btn px-4 py-2 rounded-pill fw-bold shadow"
+                            style="background: linear-gradient(45deg, #f5bcbd, #fad0c4); color: white;">Log OUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <form class="d-flex ms-auto" role="search">
+            <div class="d-flex">
+                <input type="search" class="form-control" [(ngModel)]="searchQuery" name="searchQuery" placeholder="Search for recipes" aria-label="Search" />
+                <button class="btn btn-outline search-btn" type="submit" (click)="onSearch()">
+                    <i class="bi bi-search-heart-fill"></i>
+                </button>
+            </div>
+        </form>
+
+
+
+    </div>
+</nav>

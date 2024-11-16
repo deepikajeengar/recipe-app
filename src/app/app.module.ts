@@ -18,6 +18,8 @@ import { RecipeListComponent } from './home/recipe-list/recipe-list.component';
 import { formatNumber } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { TabComponent } from './shared/tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
     RecipeDetailsComponent,
     NotificationComponent,
     RecipeListComponent,
-    SplashScreenComponent
+    SplashScreenComponent,
+    NavbarComponent,
+    TabComponent
   ],
   imports: [
     BrowserModule,
