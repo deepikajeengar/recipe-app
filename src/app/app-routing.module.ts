@@ -13,25 +13,24 @@ import { UserRecipePostComponent } from './user-dasboard/user-recipe-post/user-r
 import { LikeComponent } from './user-dasboard/like/like.component';
 import { CommentComponent } from './user-dasboard/comment/comment.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { AddRecipeFormComponent } from './home/add-recipe-form/add-recipe-form.component';
 
 const routes: Routes = [
   {path: '', component: SplashScreenComponent},  
   {path:'home', component:HomeComponent, children:[
     {path:'recipe-list', component: RecipeListComponent},
-    {path:'recipe-feed', component:RecipeFeedComponent},
+    {path:'', component:RecipeFeedComponent},
     {path:'category-filter', component: CategoryFilterComponent},
-    {path:'search-bar', component: SearchBarComponent}
+    {path:'search-bar', component: SearchBarComponent},
+    {path:'add-recipe-form', component: AddRecipeFormComponent}
   ]},
 
   {path: 'notification', component: NotificationComponent},
-  {path: 'recipe-details', component: RecipeDetailsComponent},
+  {path: 'recipe-details-page/recipe-details', component: RecipeDetailsComponent},
 
   {path: 'user-dashboard', component: UserDasboardComponent, children: [
-    {path: 'recipe-feed', component: RecipeFeedComponent},
     {path: 'user-profile', component: UserProfileComponent},
-    {path: 'user-recipe-post', component: UserRecipePostComponent},
-    {path: 'like', component: LikeComponent},
-    {path: 'comment', component: CommentComponent}
+    {path: 'user-recipe-post', component: UserRecipePostComponent}
   ]}
 ];
 

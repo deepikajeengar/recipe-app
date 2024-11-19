@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4 title-text">🍴 Add Your Recipe</h2>
+    <form class="form-container shadow-lg p-4 rounded">
+      <!-- Recipe Name -->
+      <div class="mb-4">
+        <label for="recipeName" class="form-label">Recipe Name</label>
+        <div class="input-group">
+          <span class="input-group-text icon-bg" id="nameIcon">🍽️</span>
+          <input type="text" class="form-control" id="recipeName" placeholder="Enter your recipe name" aria-describedby="nameIcon">
+        </div>
+      </div>
+  
+      <!-- Instructions and Ingredients -->
+      <div class="mb-4">
+        <label for="recipeDetails" class="form-label">Instructions and Ingredients</label>
+        <textarea class="form-control" id="recipeDetails" rows="5" placeholder="List your ingredients and instructions here"></textarea>
+      </div>
+  
+      <!-- Image Upload -->
+      <div class="mb-4">
+        <label for="recipeImage" class="form-label">Upload Recipe Image</label>
+        <div class="input-group">
+          <span class="input-group-text icon-bg" id="uploadIcon">📸</span>
+          <input class="form-control" type="file" id="recipeImage" accept="image/*" aria-describedby="uploadIcon">
+        </div>
+      </div>
+  
+      <!-- Categories Dropdown -->
+      <div class="mb-4">
+        <label for="recipeCategory" class="form-label">Category</label>
+        <div class="input-group">
+          <span class="input-group-text icon-bg" id="categoryIcon">📋</span>
+          <select class="form-select" id="recipeCategory">
+            <option selected>Select a category</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snacks">Snacks</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg rounded-pill submit-btn">Add Recipe</button>
+      </div>
+    </form>
+  </div>
+  

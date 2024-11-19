@@ -1,1 +1,93 @@
-<p>recipe-feed works!</p>
+<div class="container mt-5">
+
+    <h1 class="text-center mb-5">Recipe Feed</h1>
+
+
+  
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://www.yummytummyaarthi.com/wp-content/uploads/2022/11/red-sauce-pasta-1.jpg" class="card-img-top" alt="Recipe Image">
+          <div class="card-body">
+            <h5 class="card-title">Red Sauce Pasta</h5>
+            <p class="card-text">To make Red Sauce Pasta, cook 250g of your preferred pasta in salted boiling water until al dente. In a pan, heat 2 tablespoons of olive oil and sauté 3-4 minced garlic cloves and 1 chopped onion until softened. Add 4 pureed tomatoes (or finely chopped), 1 tablespoon of tomato paste, and season with 1 teaspoon each of red chili flakes, dried oregano, and dried basil. Stir and cook for 5-7 minutes. Add salt, black pepper, and 1 teaspoon of sugar if needed to balance the acidity. Toss the cooked pasta into the sauce, adding reserved pasta water to adjust the consistency. Serve hot, garnished with grated Parmesan and fresh basil.</p>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-success" [routerLink]="['/user-dashboard']"><i class="bi bi-suit-heart-fill"></i></button>
+              <button class="btn btn-primary" [routerLink]="['/user-dashboard']" data-bs-toggle="collapse" href="#commentSection1" role="button" aria-expanded="false" aria-controls="commentSection1"><i class="bi bi-chat-right-heart-fill"></i></button>
+              <button class="btn btn-info"><i class="bi bi-share-fill"></i></button>
+            </div>
+          </div>
+          <div class="collapse" id="commentSection1">
+            <div class="card-body">
+              <textarea class="form-control mb-3" placeholder="Add a comment..."></textarea>
+              <button class="btn btn-primary w-100 mb-2">Post Comment</button>
+              <div class="comments-list">
+                <p><strong>User1:</strong> Great recipe!</p>
+                <p><strong>User2:</strong> I tried this and loved it!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://www.sharmispassions.com/wp-content/uploads/2020/03/WhiteSaucePasta6.jpg" class="card-img-top" alt="Recipe Image">
+          <div class="card-body">
+            <h5 class="card-title">White Sauce Pasta</h5>
+            <p class="card-text">To make **White Sauce Pasta**, cook 250g of pasta in salted boiling water until al dente. In a pan, melt 2 tablespoons of butter and sauté 2 tablespoons of flour to form a roux. Gradually add 1 cup of milk, stirring continuously to avoid lumps, until the sauce thickens. Add 1/2 cup of grated Parmesan cheese, 1/2 teaspoon of garlic powder, and salt and pepper to taste. Mix well and let it simmer for 3-4 minutes. Toss the cooked pasta in the white sauce, adding pasta water to adjust the consistency. Serve hot, garnished with extra Parmesan and fresh parsley.</p>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-success" [routerLink]="['/user-dashboard']"><i class="bi bi-suit-heart-fill"></i></button>
+              <button class="btn btn-primary" data-bs-toggle="collapse" href="#commentSection2" role="button" aria-expanded="false" aria-controls="commentSection2"><i class="bi bi-chat-right-heart-fill"></i></button>
+              <button class="btn btn-info"><i class="bi bi-share-fill"></i></button>
+            </div>
+          </div>
+          <div class="collapse" id="commentSection2">
+            <div class="card-body">
+              <textarea class="form-control mb-3" placeholder="Add a comment..."></textarea>
+              <button class="btn btn-primary w-100 mb-2">Post Comment</button>
+              <div class="comments-list">
+                <p><strong>User1:</strong> Looks delicious!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/11/tomato-soup-recipe.jpg" class="card-img-top" alt="Recipe Image">
+          <div class="card-body">
+            <h5 class="card-title">Tomato soup</h5>
+            <p class="card-text">To make Tomato Soup, heat 2 tablespoons of olive oil in a pot and sauté 1 chopped onion and 2 minced garlic cloves until soft. Add 4-5 chopped tomatoes, 1 teaspoon of sugar, 1/2 teaspoon of salt, and 1/2 teaspoon of pepper. Pour in 3 cups of vegetable broth and let it simmer for 15 minutes. Blend the soup until smooth, then strain it. Return to the pot, adjust seasoning if needed, and serve with a drizzle of cream and fresh basil.</p>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-success" [routerLink]="['/user-dashboard/like']"><i class="bi bi-suit-heart-fill"></i></button>
+              <button class="btn btn-primary" data-bs-toggle="collapse" href="#commentSection2" role="button" aria-expanded="false" aria-controls="commentSection2"><i class="bi bi-chat-right-heart-fill"></i></button>
+              <button class="btn btn-info"><i class="bi bi-share-fill"></i></button>
+            </div>
+          </div>
+          <div class="collapse" id="commentSection2">
+            <div class="card-body">
+              <textarea class="form-control mb-3" placeholder="Add a comment..."></textarea>
+              <button class="btn btn-primary w-100 mb-2">Post Comment</button>
+              <div class="comments-list">
+                <p><strong>User1:</strong> Tangy</p>
+                <p><strong>User1:</strong> Easy Recipe</p>
+                <p><strong>User1:</strong> Delicious!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  
+    <div class="text-center mt-4">
+      <button class="btn btn-lg btn-primary">Add Your Recipe</button>
+    </div>
+  </div>
+  

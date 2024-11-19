@@ -20,6 +20,8 @@ import { FormsModule } from '@angular/forms';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { TabComponent } from './shared/tab/tab.component';
+import { UserRecipeListComponent } from './user-dashboard/user-recipe-list/user-recipe-list.component';
+import { AddRecipeFormComponent } from './home/add-recipe-form/add-recipe-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { TabComponent } from './shared/tab/tab.component';
     RecipeListComponent,
     SplashScreenComponent,
     NavbarComponent,
-    TabComponent
+    TabComponent,
+    UserRecipeListComponent,
+    AddRecipeFormComponent
   ],
   imports: [
     BrowserModule,

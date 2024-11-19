@@ -1,43 +1,176 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://media.istockphoto.com/id/595734992/photo/variety-of-garnished-soups-in-colorful-bowls.jpg?s=1024x1024&w=is&k=20&c=D_QVKbKkeLc8BdurYf8JJa24mlB3GH013xn7mU_PvGk=" routerLink="/recipe-details" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://media.istockphoto.com/id/1027342108/photo/soup-pho-bo.jpg?s=1024x1024&w=is&k=20&c=RMl0JdZWASgwh5NBGPd-mLxtjTVCwXK-odEgUkLSVAc=" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://media.istockphoto.com/id/935003996/photo/candies-with-jelly-and-sugar-colorful-array-of-different-childs-sweets-and-treats.jpg?s=2048x2048&w=is&k=20&c=0v_oBJigV4xe7_pAf8WRJQml0gjUAlwBn-ukLKW5TY8=" class="d-block w-100" alt="...">
-      </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="https://media.istockphoto.com/id/595734992/photo/variety-of-garnished-soups-in-colorful-bowls.jpg?s=1024x1024&w=is&k=20&c=D_QVKbKkeLc8BdurYf8JJa24mlB3GH013xn7mU_PvGk="
+        class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://media.istockphoto.com/id/1027342108/photo/soup-pho-bo.jpg?s=1024x1024&w=is&k=20&c=RMl0JdZWASgwh5NBGPd-mLxtjTVCwXK-odEgUkLSVAc="
+        class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://media.istockphoto.com/id/935003996/photo/candies-with-jelly-and-sugar-colorful-array-of-different-childs-sweets-and-treats.jpg?s=2048x2048&w=is&k=20&c=0v_oBJigV4xe7_pAf8WRJQml0gjUAlwBn-ukLKW5TY8="
+        class="d-block w-100" alt="...">
     </div>
   </div>
+</div>
 
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-6">
-        <img routerLink="/home/recipe-list"  src="https://media.istockphoto.com/id/670526200/photo/poha-indian-snacks.jpg?s=612x612&w=0&k=20&c=iEVKSfRzmcHxPIz1fKQBNzmcRpLbseh5vjXaRVckRZA=" alt="Image 1" class="img-fluid" />
-        <p >BreakFast</p>
+<div class="container mt-4">
+  <h1 class="text-center my-3">Explore Cuisines</h1>
+  <div class="row g-4">
+    <!-- Breakfast Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card breakfast-card">
+        <img
+          src="https://media.istockphoto.com/id/670526200/photo/poha-indian-snacks.jpg?s=612x612&w=0&k=20&c=iEVKSfRzmcHxPIz1fKQBNzmcRpLbseh5vjXaRVckRZA="
+          alt="Breakfast" class="img-fluid" />
+        <div class="card-content">
+          <h2>Breakfast</h2>
+          <p>Start your day with wholesome recipes.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
       </div>
-      <div class="col-6">
-        <img routerLink="/home/recipe-list" src="https://media.istockphoto.com/id/639389404/photo/authentic-indian-food.jpg?s=612x612&w=0&k=20&c=gbfAu17L1gtHmuo5biByhfCefAtYUtGQpyxMmi9_Mus=" alt="Image 2" class="img-fluid" />
-        <p >Lunch</p>
+    </div>
+    <!-- Lunch Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card lunch-card">
+        <img
+          src="https://media.istockphoto.com/id/639389404/photo/authentic-indian-food.jpg?s=612x612&w=0&k=20&c=gbfAu17L1gtHmuo5biByhfCefAtYUtGQpyxMmi9_Mus="
+          alt="Lunch" class="img-fluid" />
+        <div class="card-content">
+          <h2>Lunch</h2>
+          <p>Enjoy hearty meals for a perfect afternoon.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
       </div>
-      <div class="col-6">
-        <img routerLink="/home/recipe-list" src="https://media.istockphoto.com/id/1093661558/photo/indian-dish-chicken-tikka-masala.jpg?s=2048x2048&w=is&k=20&c=Vs5bnZF1sP4rmXB3-zVewLUOCLOVOjDC6PFbe_3WIVE=" alt="Image 3" class="img-fluid" />
-        <p >Dinner</p>
+    </div>
+    <!-- Dinner Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card dinner-card">
+        <img
+          src="https://media.istockphoto.com/id/1093661558/photo/indian-dish-chicken-tikka-masala.jpg?s=2048x2048&w=is&k=20&c=Vs5bnZF1sP4rmXB3-zVewLUOCLOVOjDC6PFbe_3WIVE="
+          alt="Dinner" class="img-fluid" />
+        <div class="card-content">
+          <h2>Dinner</h2>
+          <p>Relax with savory and comforting recipes.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
       </div>
-      <div class="col-6">
-        <img routerLink="/home/recipe-list" src="https://images.pexels.com/photos/2205270/pexels-photo-2205270.jpeg" alt="Image 4" class="img-fluid" />
-        <p >Dessert</p>
+    </div>
+    <!-- Snacks Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card snacks-card">
+        <img src="/home/recipe-list"
+          src="https://media.istockphoto.com/id/1420058934/photo/vegetarian-aloo-samosa-or-samosas-indian-special-traditional-street-food-famous-indian.jpg?s=2048x2048&w=is&k=20&c=a33ywSY_jBlQ1gcs6PG10nd7F2glza8JnRE0zmMe46g="
+          alt="Snacks" class="img-fluid" />
+        <div class="card-content">
+          <h2>Snacks</h2>
+          <p>Quick bites for any time of the day.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
       </div>
-      <div class="col-6">
-        <img routerLink="/home/recipe-list" src="https://media.istockphoto.com/id/1263440954/photo/salty-snacks-assortment-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=UZgCrm_jvJDhF6g_7-ZOHPrW6a8C8TLMnWgdzP03B_w=" alt="Image 5" class="img-fluid" />
-        <p >Snacks</p>
+    </div>
+    <!-- Dessert Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card dessert-card">
+        <img src="https://images.pexels.com/photos/2205270/pexels-photo-2205270.jpeg" alt="Dessert" class="img-fluid" />
+        <div class="card-content">
+          <h2>Dessert</h2>
+          <p>Satisfy your sweet cravings with delightful recipes.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
       </div>
-      <div class="col-6">
-        <img routerLink="/home/recipe-list" src="https://media.istockphoto.com/id/1053227310/de/foto/k%C3%BCrbissalat-mit-roter-beete-rucola-und-feta-k%C3%A4se.jpg?s=612x612&w=0&k=20&c=Cv9MwKq_uYpOJksBtmCf8KBAgSL53uppfbYcAZoql7Y=" alt="Image 6" class="img-fluid" />
-        <p >Salad</p>
+    </div>
+    <!-- Salad Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card salad-card">
+        <img
+          src="https://media.istockphoto.com/id/1053227310/de/foto/k%C3%BCrbissalat-mit-roter-beete-rucola-und-feta-k%C3%A4se.jpg?s=612x612&w=0&k=20&c=Cv9MwKq_uYpOJksBtmCf8KBAgSL53uppfbYcAZoql7Y="
+          alt="Salad" class="img-fluid" />
+        <div class="card-content">
+          <h2>Salad</h2>
+          <p>Fresh and nutritious recipes for a healthy meal.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
+      </div>
+    </div>
+    <!-- Italian Cuisine Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card italian-cuisine-card">
+        <img
+          src="https://thumbs.dreamstime.com/b/alfredo-cheese-pasta-made-penne-pasta-white-sauce-cheese-tomato-spaghetti-garlic-bread-bruschetta-vegetarian-112712306.jpg"
+          alt="Italian Cuisine" class="img-fluid" />
+        <div class="card-content">
+          <h2>Italian Cuisine</h2>
+          <p>Classic dishes straight from Italy.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
+      </div>
+    </div>
+    <!-- Mexican Cuisine Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card mexican-cuisine-card">
+        <img src="https://www.shutterstock.com/image-photo/healthy-simple-mexican-tacos-meat-260nw-2466683611.jpg"
+          alt="Mexican Cuisine" class="img-fluid" />
+        <div class="card-content">
+          <h2>Mexican Cuisine</h2>
+          <p>Spicy and flavorful delights from Mexico.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
+      </div>
+    </div>
+    <!-- Chinese Cuisine Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card chinese-cuisine-card">
+        <img src="https://www.fryingpanadventures.com/wp-content/uploads/2020/10/image-137-scaled-e1604152201367.jpeg"
+          alt="Chinese Cuisine" class="img-fluid" />
+        <div class="card-content">
+          <h2>Chinese Cuisine</h2>
+          <p>Discover the authentic flavors of China.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
+      </div>
+    </div>
+    <!-- Continental Cuisine Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card continental-cuisine-card">
+        <img
+          src="https://c8.alamy.com/comp/2F2PREX/continental-food-ingredients-cottage-cheese-grilled-and-vegetable-slices-2F2PREX.jpg"
+          alt="Continental Cuisine" class="img-fluid" />
+        <div class="card-content">
+          <h2>Continental Cuisine</h2>
+          <p>A mix of European-inspired dishes.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
+      </div>
+    </div>
+    <!-- Street Food Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card street-food-card">
+        <img src="https://img.freepik.com/premium-photo/image-indian-street-food-pani-puri_1059430-658.jpg"
+          alt="Street Food" class="img-fluid" />
+        <div class="card-content">
+          <h2>Street Food</h2>
+          <p>Vibrant and irresistible street delicacies.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
+      </div>
+    </div>
+    <!-- Vegan Section -->
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="unique-card vegan-card">
+        <img
+          src="https://images.immediate.co.uk/production/volatile/sites/30/2023/01/Ponzu-tofu-poke-bowl-8733c67.jpg?quality=90&resize=440,400"
+          alt="Vegan" class="img-fluid" />
+        <div class="card-content">
+          <h2>Vegan</h2>
+          <p>Plant-based recipes for a cruelty-free lifestyle.</p>
+          <a href="/home/recipe-list" class="btn btn-primary">View Recipes</a>
+        </div>
       </div>
     </div>
   </div>
-  
+</div>

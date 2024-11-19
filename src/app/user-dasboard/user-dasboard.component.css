@@ -22,14 +22,14 @@
   }
 
   .custom-tab-button:hover {
-    background-color: #99edcc; /* Mint Green for hover */
-    color: #4e4b47; /* Dark brown text */
+    background-color: #99edcc;
+    color: #4e4b47;
   }
 
   .custom-tab-button.active {
-    background-color: #ff6f61; /* Active tab color: Coral */
+    background-color: #ff6f61;
     color: white;
-    box-shadow: 0px 5px 15px rgba(255, 111, 97, 0.4); /* Light shadow for active tab */
+    box-shadow: 0px 5px 15px rgba(255, 111, 97, 0.4);
   }
 
   .nav-pills .nav-link {

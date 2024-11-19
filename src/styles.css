@@ -1,5 +1,6 @@
 @import "node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 body{
-    background-color: #ecdcbf;
+    background: linear-gradient(60deg,#ecdcbf, #fbd185);
+
 }
