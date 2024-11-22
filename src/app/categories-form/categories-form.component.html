@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <h2 class="text-center mb-4 title">Add Categories</h2>
+    <h2 class="text-center mb-4 title-text">Add Categories 📋</h2>
     <form class="form-container shadow-lg p-4 rounded">
         
         <div class="mb-4">
@@ -10,6 +10,17 @@
             </div>
         </div>
 
-        
+        <div class="mb-4">
+            <label for="image" class="form-label">Upload recipe image</label>
+            <div class="input-group">
+                <span class="input-group-text icon-bg" id="uploadIcon">📸</span>
+                <input type="file" class="form-control" id="image" accept="image/*" aria-describedby="uploadIcon">
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary rounded-pill submit-btn">Add category</button>
+        </div>
+
     </form> 
 </div>
