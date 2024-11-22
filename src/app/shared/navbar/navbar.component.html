@@ -31,7 +31,7 @@
                     <h1>Explore Recipes</h1>
                     <h2>🌮🥞🍝🥐🥪🍹</h2>
                     <div class="d-flex justify-content-center gap-3" style="margin: 30px 100px 0 10px; padding: 5px;">
-                        <button type="button" class="btn px-4 py-2 rounded-pill fw-bold shadow"
+                        <button type="button" class="btn px-4 py-2 rounded-pill fw-bold shadow" routerLink="/user-dashboard/log-in"
                             style="background: linear-gradient(45deg, #c6dbfd, #c2e9fb);">Log IN</button>
                         <button type="button" class="btn px-4 py-2 rounded-pill fw-bold shadow"
                             style="background: linear-gradient(45deg, #f5bcbd, #fad0c4); color: white;">Log OUT</button>
@@ -43,7 +43,7 @@
 
         <form class="d-flex ms-auto" role="search">
             <div class="d-flex">
-                <input type="search" class="form-control" [(ngModel)]="searchQuery" name="searchQuery" placeholder="Search for recipes" aria-label="Search" />
+                <input type="search" class="form-control" [(ngModel)] = "searchQuery" name="searchQuery" placeholder="Search for recipes" aria-label="Search" />
                 <button class="btn btn-outline search-btn" type="submit" (click)="onSearch()">
                     <i class="bi bi-search-heart-fill"></i>
                 </button>

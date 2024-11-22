@@ -14,6 +14,8 @@ import { LikeComponent } from './user-dasboard/like/like.component';
 import { CommentComponent } from './user-dasboard/comment/comment.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { AddRecipeFormComponent } from './home/add-recipe-form/add-recipe-form.component';
+import { LogInComponent } from './user-dasboard/log-in/log-in.component';
+import { CategoriesFormComponent } from './categories-form/categories-form.component';
 
 const routes: Routes = [
   {path: '', component: SplashScreenComponent},  
@@ -29,9 +31,12 @@ const routes: Routes = [
   {path: 'recipe-details-page/recipe-details', component: RecipeDetailsComponent},
 
   {path: 'user-dashboard', component: UserDasboardComponent, children: [
-    {path: 'user-profile', component: UserProfileComponent},
-    {path: 'user-recipe-post', component: UserRecipePostComponent}
-  ]}
+    {path: '', component: UserProfileComponent},
+    {path: 'user-recipe-post', component: UserRecipePostComponent},
+    {path:'log-in', component: LogInComponent}
+  ]},
+
+  {path: 'categories-form', component: CategoriesFormComponent}
 ];
 
 @NgModule({
