@@ -1,0 +1,29 @@
+.title-text {
+    font-weight: bold;
+    color: #a25007;
+    text-transform: uppercase;
+  }
+  
+  /* Form Container Styling */
+  .form-container {
+    background: linear-gradient(100deg, #db947b, #b65a2f);
+    border-radius: 8px;
+  }
+  
+  
+  /* Input Group Icons */
+  .icon-bg {
+    background-color: #f0763a;
+    color: white;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    background-color: #e78d3e;
+    border: none;
+    padding: 5px 10px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #a25007;
+  }

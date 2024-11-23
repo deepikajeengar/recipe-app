@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-recipe-form.component.css']
 })
 export class AddRecipeFormComponent {
+recipeName: any;
+instruction: any;
+image: any;
+category: any;
 
+
+addRecipe(){
+  console.log(this.recipeName)
+  console.log(this.instruction)
+  console.log(this.image)
+  console.log(this.category)
+}
 }

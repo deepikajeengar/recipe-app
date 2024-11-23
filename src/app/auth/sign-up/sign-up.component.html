@@ -6,7 +6,7 @@
         <label for="userName" class="form-label">Name</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="nameIcon">👤</span>
-          <input type="text" class="form-control" id="userName" placeholder="Enter your name" aria-describedby="nameIcon">
+          <input type="text" name="name" [(ngModel)]="name" class="form-control" id="userName" placeholder="Enter your name" aria-describedby="nameIcon">
         </div>
       </div>
   
@@ -15,7 +15,7 @@
         <label for="userPhone" class="form-label">Phone Number</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="phoneIcon">📞</span>
-          <input type="tel" class="form-control" id="userPhone" placeholder="Enter your phone number" aria-describedby="phoneIcon">
+          <input type="tel" name="phoneNumber" [(ngModel)]="phoneNumber" class="form-control" id="userPhone" placeholder="Enter your phone number" aria-describedby="phoneIcon">
         </div>
       </div>
   
@@ -24,7 +24,7 @@
         <label for="userEmail" class="form-label">Email</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="emailIcon">📧</span>
-          <input type="email" class="form-control" id="userEmail" placeholder="Enter your email" aria-describedby="emailIcon">
+          <input type="email" name="email" [(ngModel)]="email" class="form-control" id="userEmail" placeholder="Enter your email" aria-describedby="emailIcon">
         </div>
       </div>
   
@@ -33,15 +33,16 @@
         <label for="userPassword" class="form-label">Password</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="passwordIcon">🔒</span>
-          <input type="password" class="form-control" id="userPassword" placeholder="Enter your password" aria-describedby="passwordIcon">
+          <input type="password" name="password" [(ngModel)]="password" class="form-control" id="userPassword" placeholder="Enter your password" aria-describedby="passwordIcon">
         </div>
       </div>
   
       <!-- Submit Button -->
       <div class="text-center">
-        <button type="submit" class="btn btn-primary rounded-pill submit-btn">Submit</button>
+        <button type="submit" (click)="signUp()" class="btn btn-primary rounded-pill submit-btn">Submit</button>
       </div>
     </form>
   </div>
   
+
 

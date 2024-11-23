@@ -21,8 +21,11 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { TabComponent } from './shared/tab/tab.component';
 import { AddRecipeFormComponent } from './home/add-recipe-form/add-recipe-form.component';
-import { LogInComponent } from './user-dasboard/log-in/log-in.component';
 import { CategoriesFormComponent } from './categories-form/categories-form.component';
+import { LogInComponent } from './auth/log-in/log-in.component';
+import { AuthComponent } from './auth/auth.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 
 
 @NgModule({
@@ -46,6 +49,9 @@ import { CategoriesFormComponent } from './categories-form/categories-form.compo
     AddRecipeFormComponent,
     LogInComponent,
     CategoriesFormComponent,
+    AuthComponent,
+    SignUpComponent,
+    ForgetPasswordComponent,
   ],
   imports: [
     BrowserModule,

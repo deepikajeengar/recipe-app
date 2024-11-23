@@ -6,14 +6,14 @@
         <label for="recipeName" class="form-label">Recipe Name</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="nameIcon">🍽️</span>
-          <input type="text" class="form-control" id="recipeName" placeholder="Enter your recipe name" aria-describedby="nameIcon">
+          <input type="text" name="recipeName" [(ngModel)]="recipeName" class="form-control" id="recipeName" placeholder="Enter your recipe name" aria-describedby="nameIcon">
         </div>
       </div>
   
       <!-- Instructions and Ingredients -->
       <div class="mb-4">
         <label for="recipeDetails" class="form-label">Instructions and Ingredients</label>
-        <textarea class="form-control" id="recipeDetails" rows="5" placeholder="List your ingredients and instructions here"></textarea>
+        <textarea class="form-control" id="recipeDetails" name="instructions" [(ngModel)]="instruction" rows="5" placeholder="List your ingredients and instructions here"></textarea>
       </div>
   
       <!-- Image Upload -->
@@ -21,7 +21,7 @@
         <label for="recipeImage" class="form-label">Upload Recipe Image</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="uploadIcon">📸</span>
-          <input class="form-control" type="file" id="recipeImage" accept="image/*" aria-describedby="uploadIcon">
+          <input class="form-control" name="image" [(ngModel)]="image" type="file" id="recipeImage" accept="image/*" aria-describedby="uploadIcon">
         </div>
       </div>
   
@@ -30,7 +30,7 @@
         <label for="recipeCategory" class="form-label">Category</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="categoryIcon">📋</span>
-          <select class="form-select" id="recipeCategory">
+          <select name="category" [(ngModel)]="category" class="form-select" id="recipeCategory">
             <option selected>Select a category</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
@@ -42,13 +42,9 @@
   
       <!-- Submit Button -->
       <div class="text-center">
-        <button type="submit" class="btn btn-primary btn-lg rounded-pill submit-btn">Add Recipe</button>
+        <button type="submit" (click)="addRecipe()" class="btn btn-primary btn-lg rounded-pill submit-btn">Add Recipe</button>
       </div>
     </form>
   </div>
   
-  <br>
-
-  <button class="btn btn-primary btn-lg rounded-pill submit-btn" routerLink="/categories-form">Add category</button>
-
   <br>

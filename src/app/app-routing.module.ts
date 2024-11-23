@@ -14,8 +14,11 @@ import { LikeComponent } from './user-dasboard/like/like.component';
 import { CommentComponent } from './user-dasboard/comment/comment.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { AddRecipeFormComponent } from './home/add-recipe-form/add-recipe-form.component';
-import { LogInComponent } from './user-dasboard/log-in/log-in.component';
 import { CategoriesFormComponent } from './categories-form/categories-form.component';
+import { LogInComponent } from './auth/log-in/log-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { AuthComponent } from './auth/auth.component';
+import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 
 const routes: Routes = [
   {path: '', component: SplashScreenComponent},  
@@ -33,10 +36,15 @@ const routes: Routes = [
   {path: 'user-dashboard', component: UserDasboardComponent, children: [
     {path: '', component: UserProfileComponent},
     {path: 'user-recipe-post', component: UserRecipePostComponent},
-    {path:'log-in', component: LogInComponent}
   ]},
 
-  {path: 'categories-form', component: CategoriesFormComponent}
+  {path: 'categories-form', component: CategoriesFormComponent},
+  
+  {path: 'auth', component: AuthComponent, children: [
+    {path:'log-in', component: LogInComponent},
+    {path:'sign-up', component: SignUpComponent},
+    {path:'forget-password', component: ForgetPasswordComponent}
+  ]}
 ];
 
 @NgModule({

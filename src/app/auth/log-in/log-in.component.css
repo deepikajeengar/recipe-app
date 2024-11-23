@@ -27,3 +27,7 @@
   .submit-btn:hover {
     background-color: #a25007;
   }
+
+  a{
+    color: white;
+  }

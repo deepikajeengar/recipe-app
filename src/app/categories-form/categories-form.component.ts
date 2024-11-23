@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./categories-form.component.css']
 })
 export class CategoriesFormComponent {
+categoryName: any;
+image: any;
 
+addCategory(){
+  console.log(this.categoryName)
+  console.log(this.image)
+}
 }
