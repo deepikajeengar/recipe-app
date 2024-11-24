@@ -28,22 +28,6 @@ button{
     z-index: 999;
     background-color: #ecdcbf;
 }
-
-.offcanvas {
-    background-image: url('https://img.freepik.com/premium-photo/food-ingredients-spices-aged-background_182252-2054.jpg?w=360');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-  }
-  
-.offcanvas-body{
-    color: rgb(153, 38, 38);
-}
-
-.offcanvas-body h1{
-    font-size: 40px;
-    font-family: serif;
-}
   
 .btn:hover {
     opacity: 0.8;
@@ -60,4 +44,54 @@ button{
 
 .search-btn{
     position: absolute;
+}
+
+.offcanvas {
+    background-image: url('https://img.freepik.com/premium-photo/food-ingredients-spices-aged-background_182252-2054.jpg?w=360');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.offcanvas-header img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.offcanvas-body {
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.offcanvas-body h1 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+}
+
+.offcanvas-body p {
+    font-size: 1.1rem;
+    color: #aa4c20;
+    line-height: 1.5;
+}
+
+.offcanvas-body .btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.5s ease;
+}
+
+.offcanvas-body .btn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.offcanvas-body h2 {
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.offcanvas-body .shadow-lg {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
