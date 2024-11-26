@@ -24,7 +24,7 @@ export class AddRecipeFormComponent {
       image: this.image,
       category: this.category
     }
-
+ console.log(data)
     this.firebaseCollectionName = collection(this.firestore, "recipe")
 
     addDoc(this.firebaseCollectionName, data).then(res => {
@@ -43,6 +43,7 @@ getRecipe(){
   
   collectionData(this.firebaseCollectionName, { idField: 'id'}).subscribe((recipe) => {
     console.log("Fetched Recipe", recipe);
+    this.recipeName = recipe;
   })
 }
 }

@@ -19,7 +19,7 @@ constructor(public firestore: Firestore){}
 addCategory(){
 let data = {
   name: this.categoryName,
-  image: this.image,
+  // image: this.image,
   description: this.shortDescription
 }
 
