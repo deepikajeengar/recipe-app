@@ -26,6 +26,8 @@ import { LogInComponent } from './auth/log-in/log-in.component';
 import { AuthComponent } from './auth/auth.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -57,7 +59,14 @@ import { ForgetPasswordComponent } from './auth/forget-password/forget-password.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
+    provideFirebaseApp(() => initializeApp({ apiKey: "AIzaSyD8xflMR9X30-NRcOanV0538c3ZcMBn4BU",
+      authDomain: "recipe-app-03.firebaseapp.com",
+      projectId: "recipe-app-03",
+      storageBucket: "recipe-app-03.firebasestorage.app",
+      messagingSenderId: "761035554208",
+      appId: "1:761035554208:web:b680c3625d96b05c7178c5",
+      measurementId: "G-TWFPTN65NY" })),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]

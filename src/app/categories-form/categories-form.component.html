@@ -18,6 +18,11 @@
             </div>
         </div>
 
+        <div class="mb-4">
+            <label for="recipeDetails" class="form-label">Short Description</label>
+            <textarea class="form-control" id="recipeDetails" name="instructions" [(ngModel)]="shortDescription" rows="5" placeholder="List your ingredients and instructions here"></textarea>
+          </div>
+
         <div class="text-center">
             <button type="submit" (click)="addCategory()" class="btn btn-primary rounded-pill submit-btn">Add category</button>
         </div>

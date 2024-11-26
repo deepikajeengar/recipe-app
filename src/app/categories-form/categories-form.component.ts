@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { collectionData } from '@angular/fire/firestore';
+import { addDoc, collection, Firestore } from '@firebase/firestore';
+
 
 @Component({
   selector: 'app-categories-form',
@@ -8,9 +11,34 @@ import { Component } from '@angular/core';
 export class CategoriesFormComponent {
 categoryName: any;
 image: any;
+shortDescription: any;
+firebaseCollectionName: any;
+
+constructor(public firestore: Firestore){}
 
 addCategory(){
-  console.log(this.categoryName)
-  console.log(this.image)
+let data = {
+  name: this.categoryName,
+  image: this.image,
+  description: this.shortDescription
+}
+
+this.firebaseCollectionName = collection(this.firestore, "categories")
+
+addDoc(this.firebaseCollectionName,data).then(res=>{
+  console.log("Category added successfully!");
+  this.categoryName = null
+  this.image = null
+  this.shortDescription = null;
+}).catch((error) => {
+  console.error("Error adding category:", error);
+}); 
+}
+
+getCategory(){
+this.firebaseCollectionName = collection(this.firestore, "categories")
+
+collectionData(this.firebaseCollectionName, { idField: 'id' }).subscribe((categories) => {
+  console.log("Fetched categories:", categories);})
 }
 }
