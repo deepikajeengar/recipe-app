@@ -6,7 +6,7 @@
         <label for="userEmail" class="form-label">Email</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="emailIcon">📧</span>
-          <input type="email" name="email" [(ngModel)]="email" class="form-control" id="userEmail" placeholder="Enter your email" aria-describedby="emailIcon">
+          <input type="email" name="email" [(ngModel)]="formdata.email" class="form-control" id="userEmail" placeholder="Enter your email" aria-describedby="emailIcon">
         </div>
       </div>
   
@@ -15,7 +15,7 @@
         <label for="userPassword" class="form-label">Password</label>
         <div class="input-group">
           <span class="input-group-text icon-bg" id="passwordIcon">🔒</span>
-          <input type="password" name="password" [(ngModel)]="password" class="form-control" id="userPassword" placeholder="Enter your password" aria-describedby="passwordIcon">
+          <input type="password" name="password" [(ngModel)]="formdata.password" class="form-control" id="userPassword" placeholder="Enter your password" aria-describedby="passwordIcon">
         </div>
       </div>
 

@@ -15,8 +15,7 @@ import { CommentComponent } from './user-dasboard/comment/comment.component';
 import { RecipeDetailsComponent } from './recipe-details-page/recipe-details/recipe-details.component';
 import { NotificationComponent } from './notification/notification.component';
 import { RecipeListComponent } from './home/recipe-list/recipe-list.component';
-import { formatNumber } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { TabComponent } from './shared/tab/tab.component';
@@ -28,6 +27,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -49,24 +49,28 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     NavbarComponent,
     TabComponent,
     AddRecipeFormComponent,
-    LogInComponent,
     CategoriesFormComponent,
     AuthComponent,
     SignUpComponent,
     ForgetPasswordComponent,
+    LogInComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp({ apiKey: "AIzaSyD8xflMR9X30-NRcOanV0538c3ZcMBn4BU",
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp({
+      apiKey: "AIzaSyD8xflMR9X30-NRcOanV0538c3ZcMBn4BU",
       authDomain: "recipe-app-03.firebaseapp.com",
       projectId: "recipe-app-03",
       storageBucket: "recipe-app-03.firebasestorage.app",
       messagingSenderId: "761035554208",
       appId: "1:761035554208:web:b680c3625d96b05c7178c5",
-      measurementId: "G-TWFPTN65NY" })),
+      measurementId: "G-TWFPTN65NY",
+     })),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]
