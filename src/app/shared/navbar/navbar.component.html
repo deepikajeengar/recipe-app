@@ -24,8 +24,8 @@
                 <p class="mb-4">Dive into a world of mouthwatering recipes and start creating your culinary masterpiece today! Let's get cooking!</p>
                 <h2 class="text-warning">🌮🥞🍝🥐🥪🍹</h2>
                 <div class="d-flex justify-content-center gap-3 mt-4">
-                    <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold" routerLink="/auth/log-in" style="background: linear-gradient(45deg, #c6dbfd, #c2e9fb);">Log In</button>
-                    <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold text-white" style="background: linear-gradient(45deg, #f5bcbd, #fad0c4);">Log Out</button>
+                    <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold" routerLink="/auth/log-in" *ngIf="!userId" style="background: linear-gradient(45deg, #c6dbfd, #c2e9fb);">Log In</button>
+                    <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold text-white" *ngIf="userId" style="background: linear-gradient(45deg, #f5bcbd, #fad0c4);" (click)="logOut()">Log Out</button>
                 </div>
             </div>
         </div>
