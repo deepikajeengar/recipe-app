@@ -19,22 +19,23 @@ import { LogInComponent } from './auth/log-in/log-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { AuthComponent } from './auth/auth.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {path: '', component: SplashScreenComponent},  
   {path:'home', component:HomeComponent, children:[
-    {path:'recipe-list', component: RecipeListComponent},
+    {path:'recipe-list/:categoryId/:categoryName', component: RecipeListComponent},
     {path:'', component:RecipeFeedComponent},
     {path:'category-filter', component: CategoryFilterComponent},
     {path:'search-bar', component: SearchBarComponent},
-    {path:'add-recipe-form', component: AddRecipeFormComponent}
+    {path:'add-recipe-form',canActivate:[AuthGuard], component: AddRecipeFormComponent}
   ]},
 
   {path: 'notification', component: NotificationComponent},
-  {path: 'recipe-details-page/recipe-details', component: RecipeDetailsComponent},
+  {path: 'recipe-details-page/recipe-details/:recipeId', component: RecipeDetailsComponent},
 
   {path: 'user-dashboard', component: UserDasboardComponent, children: [
-    {path: '', component: UserProfileComponent},
+    {path: '', canActivate:[AuthGuard], component: UserProfileComponent},
     {path: 'user-recipe-post', component: UserRecipePostComponent},
   ]},
 

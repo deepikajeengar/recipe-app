@@ -19,6 +19,7 @@ getCategory(){
   this.firebaseCollectionName = collection(this.firestore, "categories")
 
   collectionData(this.firebaseCollectionName, {idField: 'id'}).subscribe((category: any) => {
+    console.log(category)
     this.category = category;
   })
 

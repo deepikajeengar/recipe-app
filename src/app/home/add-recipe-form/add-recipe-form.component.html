@@ -32,10 +32,7 @@
           <span class="input-group-text icon-bg" id="categoryIcon">📋</span>
           <select name="category" [(ngModel)]="category" class="form-select" id="recipeCategory">
             <option selected>Select a category</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Snacks">Snacks</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
           </select>
         </div>
       </div>

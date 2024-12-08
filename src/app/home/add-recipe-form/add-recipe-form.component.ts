@@ -14,14 +14,17 @@ export class AddRecipeFormComponent {
   image: any;
   category: any;
   firebaseCollectionName: any;
+  categories: any;
 
-  constructor(public firestore: Firestore) { }
+  constructor(public firestore: Firestore) {
+    this.getCategories()
+  }
 
   addRecipe() {
     let data = {
       name: this.recipeName,
       instruction: this.instruction,
-      image: this.image,
+      // image: this.image,
       category: this.category
     }
  console.log(data)
@@ -38,12 +41,12 @@ export class AddRecipeFormComponent {
     });
   }
 
-getRecipe(){
-  this.firebaseCollectionName = collection(this.firestore, "recipe")
+getCategories(){
+  this.firebaseCollectionName = collection(this.firestore, "categories")
   
-  collectionData(this.firebaseCollectionName, { idField: 'id'}).subscribe((recipe) => {
-    console.log("Fetched Recipe", recipe);
-    this.recipeName = recipe;
+  collectionData(this.firebaseCollectionName, { idField: 'id'}).subscribe((categories) => {
+    console.log("Fetched Categories", categories);
+    this.categories = categories;
   })
 }
 }
