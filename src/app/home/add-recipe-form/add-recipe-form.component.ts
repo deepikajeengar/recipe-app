@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { addDoc, collectionData, doc, Firestore, updateDoc } from '@angular/fire/firestore';
+import { addDoc, collectionData, doc, Firestore, getDoc, updateDoc } from '@angular/fire/firestore';
 import { collection } from '@angular/fire/firestore';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -15,9 +16,15 @@ export class AddRecipeFormComponent {
   category: any;
   firebaseCollectionName: any;
   categories: any;
+  recipeId: any;
 
-  constructor(public firestore: Firestore) {
+  constructor(public firestore: Firestore, public route: ActivatedRoute) {
+    this.recipeId = route.snapshot.paramMap.get("recipeId")
     this.getCategories()
+    if(this.recipeId){
+      this.getRecipe()
+    }   
+
   }
 
   addRecipe() {
@@ -25,7 +32,8 @@ export class AddRecipeFormComponent {
       name: this.recipeName,
       instruction: this.instruction,
       // image: this.image,
-      category: this.category
+      category: this.category,
+      userId: JSON.parse(localStorage.getItem("userDetails") as string)
     }
  console.log(data)
     this.firebaseCollectionName = collection(this.firestore, "recipe")
@@ -51,4 +59,31 @@ getCategories(){
     this.categories = categories;
   })
 }
+
+updateRecipe(){
+  let data = {
+    name: this.recipeName,
+    instruction: this.instruction,
+    // image: this.image,
+    category: this.category,
+    userId: JSON.parse(localStorage.getItem("userDetails") as string)
+  }
+  updateDoc(doc(this.firestore, "recipe/" + this.recipeId), data).then(res =>{
+    console.log(res)
+  })
+}
+
+getRecipe() {
+  const docPath = doc(this.firestore, "recipe/"+this.recipeId)
+  getDoc(docPath).then((recipe:any)=>{
+    console.log(recipe)
+    console.log(recipe.data())
+ const recipeDetails = recipe.data();
+ console.log(recipeDetails)
+ this.recipeName = recipeDetails.name
+ this.category = recipeDetails.category
+ this.instruction = recipeDetails.instruction
+  })
+}
+
 }

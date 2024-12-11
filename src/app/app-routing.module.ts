@@ -28,7 +28,8 @@ const routes: Routes = [
     {path:'', component:RecipeFeedComponent},
     {path:'category-filter', component: CategoryFilterComponent},
     {path:'search-bar', component: SearchBarComponent},
-    {path:'add-recipe-form',canActivate:[AuthGuard], component: AddRecipeFormComponent}
+    {path:'add-recipe-form',canActivate:[AuthGuard], component: AddRecipeFormComponent},
+    {path:'edit-recipe-form/:recipeId',canActivate:[AuthGuard], component: AddRecipeFormComponent}
   ]},
 
   {path: 'notification', component: NotificationComponent},

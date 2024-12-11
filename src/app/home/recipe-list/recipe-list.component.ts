@@ -31,16 +31,5 @@ export class RecipeListComponent {
     })
   }
 
-  // updateRecipe(){
-  //   let data = {
-  //     name: this.name,
-  //     instruction: this.instruction,
-  //     category: this.category
-  //   }
-  //   this.firebaseCollectionName = collection(this.firestore, "recipe")
-  //   updateDoc(doc(this.firestore, "recipe", 'id'), data).then(res =>{
-  //     console.log(res)
-  //   })
- 
-  // }
+
 }

@@ -8,12 +8,13 @@ import { collection, collectionData, doc, Firestore, query, updateDoc, where } f
 })
 export class UserProfileComponent {
   userDetails: any;
-
+  myRecipes: any;
   userId: any = JSON.parse(localStorage.getItem("userDetails") as string)
 
 
   constructor(public firestore: Firestore) {
     this.getLoggedinUser()
+    this.getMyRecipes()
   }
 
   getLoggedinUser() {
@@ -35,4 +36,16 @@ updateLoggedinUser(){
     console.error("Error updating user profile:", error);
   });
   }
+
+  getMyRecipes(){
+    const firebaseCollectionName = collection(this.firestore, "recipe")
+    const firebaseQurey = query(firebaseCollectionName,where("userId","==", JSON.parse(localStorage.getItem("userDetails")as string)))
+    collectionData(firebaseQurey, { idField: 'id'}).subscribe((myRecipes: any) => {
+      console.log("Fetched Recipe", myRecipes);
+      this.myRecipes = myRecipes;
+    })
+  }
+
 }
+
+
