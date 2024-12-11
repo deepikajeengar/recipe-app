@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { addDoc, collectionData, Firestore } from '@angular/fire/firestore';
+import { addDoc, collectionData, doc, Firestore, updateDoc } from '@angular/fire/firestore';
 import { collection } from '@angular/fire/firestore';
 
 
@@ -40,6 +40,8 @@ export class AddRecipeFormComponent {
       console.error("Error adding recipe", error)
     });
   }
+
+ 
 
 getCategories(){
   this.firebaseCollectionName = collection(this.firestore, "categories")

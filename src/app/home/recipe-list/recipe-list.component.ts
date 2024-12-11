@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { collection, collectionData, Firestore, query, where } from '@angular/fire/firestore';
+import { collection, collectionData, doc, Firestore, query, updateDoc, where } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -30,4 +30,17 @@ export class RecipeListComponent {
       this.recipes = recipes;
     })
   }
+
+  // updateRecipe(){
+  //   let data = {
+  //     name: this.name,
+  //     instruction: this.instruction,
+  //     category: this.category
+  //   }
+  //   this.firebaseCollectionName = collection(this.firestore, "recipe")
+  //   updateDoc(doc(this.firestore, "recipe", 'id'), data).then(res =>{
+  //     console.log(res)
+  //   })
+ 
+  // }
 }

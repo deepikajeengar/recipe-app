@@ -10,32 +10,70 @@
   background-size: cover;
 }
 
-.custom-tab-button {
-  background-color: #f8d7da; /* Soft Coral color */
-  color: #4e4b47;  /* Dark grayish brown */
-  border-radius: 30px;
-  padding: 12px 24px;
-  font-weight: 500;
-  font-size: 16px;
-  text-align: center;
-  transition: all 0.3s ease;
+
+/* Container for profile form */
+.profile-form-container {
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
 }
 
-.custom-tab-button:hover {
-  background-color: #99edcc;
-  color: #4e4b47;
+/* Form wrapper */
+.form-container {
+  width: 100%;
+  max-width: 400px; /* Set a max-width for the form */
+  padding: 20px;
+  background-color: #fff7f8; /* Light background color for the form */
+  border-radius: 15px; /* Rounded corners for the form */
 }
 
-.custom-tab-button.active {
-  background-color: #ff6f61;
-  color: white;
-  box-shadow: 0px 5px 15px rgba(255, 111, 97, 0.4);
+/* Styling for form labels */
+.form-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: #6f4f37; 
+  font-weight: bold;
 }
 
-.nav-pills .nav-link {
+/* Styling for input fields (removing border and improving focus) */
+.no-border {
   border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #6f4f37; /* Subtle brown text color */
+
+  margin-bottom: 5px;
 }
 
-li, ul {
-  margin: 10px;
+
+
+.btn-warning {
+  background-color: #cc97f7; /* Soft purple background */
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+}
+
+
+button:hover {
+  background-color: #d68aff;
+  cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .profile-form-container {
+    padding: 10px;
+  }
+  .form-container {
+    padding: 15px;
+    max-width: 100%;
+  }
 }
