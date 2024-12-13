@@ -20,6 +20,8 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { AuthComponent } from './auth/auth.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { AuthGuard } from './auth/auth.guard';
+import { CategoriesListComponent } from './categories-form/categories-list/categories-list.component';
+import { AddCategoryComponent } from './categories-form/add-category/add-category.component';
 
 const routes: Routes = [
   {path: '', component: SplashScreenComponent},  
@@ -40,7 +42,11 @@ const routes: Routes = [
     {path: 'user-recipe-post', component: UserRecipePostComponent},
   ]},
 
-  {path: 'categories-form', component: CategoriesFormComponent},
+  {path: 'categories-form', component: CategoriesFormComponent, children: [
+    {path: '', component: AddCategoryComponent},
+    {path: 'edit-category/:categoryId',canActivate:[AuthGuard], component: AddCategoryComponent},
+    {path: 'categories-list', component: CategoriesListComponent}
+  ]},
   
   {path: 'auth', component: AuthComponent, children: [
     {path:'log-in', component: LogInComponent},

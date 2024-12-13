@@ -28,6 +28,8 @@ import { ForgetPasswordComponent } from './auth/forget-password/forget-password.
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { CategoriesListComponent } from './categories-form/categories-list/categories-list.component';
+import { AddCategoryComponent } from './categories-form/add-category/add-category.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     SignUpComponent,
     ForgetPasswordComponent,
     LogInComponent,
+    CategoriesListComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,

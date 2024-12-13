@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4 title-text">Add Categories 📋</h2>
+    <form class="form-container shadow-lg p-4 rounded">
+        
+        <div class="mb-4">
+            <label for="categoryName" class="form-label">Category Name</label>
+            <div class="input-group">
+                <span class="input-group-text icon-bg" id="categoryIcon">📋</span>
+                <input type="text" name="categoryName" [(ngModel)]="categoryName" class="form-control" id="categoryName" placeholder="Enter your category name">
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="image" class="form-label">Upload recipe image</label>
+            <div class="input-group">
+                <span class="input-group-text icon-bg" id="uploadIcon">📸</span>
+                <input type="file" name="image" [(ngModel)]="image" class="form-control" id="image" accept="image/*">
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="recipeDetails" class="form-label">Short Description</label>
+            <textarea class="form-control" id="recipeDetails" name="instructions" [(ngModel)]="shortDescription" rows="5" placeholder="List your ingredients and instructions here"></textarea>
+          </div>
+
+        <div class="text-center">
+            <button type="submit" *ngIf = "!categoryId" (click)="addCategory()" class="btn btn-primary rounded-pill submit-btn">Add category</button>
+            <button type="submit" *ngIf = "categoryId" (click)="edit()" class="btn btn-primary rounded-pill submit-btn">Add category</button>
+        </div>
+
+    </form> 
+</div>
+
+<br>
+
+
+<div class="text-center">
+    <button type="submit" routerLink="/categories-form/categories-list" class="btn btn-primary rounded-pill submit-btn">Category List</button>
+</div>
+

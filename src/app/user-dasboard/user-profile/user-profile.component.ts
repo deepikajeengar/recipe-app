@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { collection, collectionData, doc, Firestore, query, updateDoc, where } from '@angular/fire/firestore';
+import { collection, collectionData, deleteDoc, doc, Firestore, query, updateDoc, where } from '@angular/fire/firestore';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,7 +13,7 @@ export class UserProfileComponent {
   userId: any = JSON.parse(localStorage.getItem("userDetails") as string)
 
 
-  constructor(public firestore: Firestore) {
+  constructor(public firestore: Firestore, public route: ActivatedRoute) {
     this.getLoggedinUser()
     this.getMyRecipes()
   }
@@ -45,6 +46,16 @@ updateLoggedinUser(){
       this.myRecipes = myRecipes;
     })
   }
+
+  delete(id:any) {
+    deleteDoc(doc(this.firestore, "recipe/" + id)).then(res => {
+      alert("Your recipe has been deleted")
+      console.log(res)
+    }).catch(err =>{
+      console.log(err)
+    })
+  }
+
 
 }
 

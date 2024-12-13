@@ -32,6 +32,7 @@ addDoc(this.firebaseCollectionName,data).then(res=>{
   this.shortDescription = null;
 }).catch((error) => {
   console.error("Error adding category:", error);
+  
 }); 
 }
 

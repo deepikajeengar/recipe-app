@@ -1,0 +1,9 @@
+.text-container {
+    display: -webkit-box; /* Use flexbox for truncation */
+    -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Show "..." at the end */
+    line-clamp: 5; /* Display only 3 lines (you can adjust this to 4) */
+    -webkit-line-clamp: 5; /* This works for WebKit-based browsers */
+    width: 100%; /* Adjust container width as needed */
+}
