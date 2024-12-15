@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { collection, doc, updateDoc } from '@angular/fire/firestore';
+import { collection, doc, getDoc, updateDoc } from '@angular/fire/firestore';
 import { addDoc, collectionData, Firestore } from '@angular/fire/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -20,6 +20,8 @@ updatedData:any;
 
 constructor(public firestore: Firestore, public route: ActivatedRoute, public router: Router){
 this.categoryId = route.snapshot.paramMap.get("categoryId")
+if (this.categoryId) {
+  this.getCategory()}
 }
 
 addCategory(){
@@ -43,11 +45,13 @@ addDoc(this.firebaseCollectionName,data).then(res=>{
 }
 
 getCategory(){
-this.firebaseCollectionName = collection(this.firestore, "categories")
 
-collectionData(this.firebaseCollectionName, { idField: 'id' }).subscribe((categories) => {
-  console.log("Fetched categories:", categories);})
-  this.categories = this.categories
+const docPath = doc(this.firestore, "categories/" + this.categoryId)
+getDoc(docPath).then((category:any) => {
+  console.log(category.data())
+  this.categoryName = category.data().name
+  this.shortDescription = category.data().description
+})
 }
 
  edit(){
