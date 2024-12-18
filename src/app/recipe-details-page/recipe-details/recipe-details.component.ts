@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./recipe-details.component.css']
 })
 export class RecipeDetailsComponent {
+  loader : boolean = false;
 recipeId: any;
 recipeDetails: any;
 
@@ -18,8 +19,10 @@ constructor(public firestore:Firestore,public route: ActivatedRoute){
 }
 
 getRecipe() {
+  this.loader = true;
   const docPath = doc(this.firestore, "recipe/"+this.recipeId)
   getDoc(docPath).then((recipe:any)=>{
+    this.loader = false;
     console.log(recipe)
     console.log(recipe.data())
  this.recipeDetails = recipe.data();

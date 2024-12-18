@@ -49,6 +49,10 @@ routerLink="/categories-form">Add category</button>
 
 <br><br>
 
+<div class="loader-overlay" *ngIf="loader">
+  <div class="spinner"></div>
+</div>
+
 
 <!-- 
 <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">

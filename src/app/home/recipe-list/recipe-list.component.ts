@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent {
-
+  loader:boolean = false;
   recipes : any;
   firebaseCollectionName: any;
   categoryId:any;
@@ -23,9 +23,11 @@ export class RecipeListComponent {
   }
 
   getRecipe(){
+    this.loader = true;
     this.firebaseCollectionName = collection(this.firestore, "recipe")
     const firebaseQurey = query(this.firebaseCollectionName,where("category","==",this.categoryId))
     collectionData(firebaseQurey, { idField: 'id'}).subscribe((recipes: any) => {
+      this.loader = false;
       console.log("Fetched Recipe", recipes);
       this.recipes = recipes;
     })

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+  loader: boolean = false
   name: any;
   phoneNumber: any;
   email: any;
@@ -20,6 +21,7 @@ export class SignUpComponent {
 
 
   signUp() {
+    this.loader = true
     createUserWithEmailAndPassword(this.auth, this.email, this.password).then(res => {
       let data = {
         name: this.name,
@@ -31,6 +33,7 @@ export class SignUpComponent {
       this.firebaseCollectionName = collection(this.firestore, "users")
 
       addDoc(this.firebaseCollectionName, data).then(res => {
+        this.loader = false
         alert("Sign up successfully. Please Log in")
         this.router.navigateByUrl("/auth/log-in")
       }).catch(err => {

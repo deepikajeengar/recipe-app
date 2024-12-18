@@ -7,6 +7,7 @@ import { collection, collectionData, Firestore } from '@angular/fire/firestore';
   styleUrls: ['./recipe-feed.component.css']
 })
 export class RecipeFeedComponent {
+  loader:boolean = false;
   recipe : any;
   firebaseCollectionName: any;
 
@@ -16,8 +17,9 @@ export class RecipeFeedComponent {
 
   getRecipe(){
     this.firebaseCollectionName = collection(this.firestore, "recipe")
-    
+    this.loader = true
     collectionData(this.firebaseCollectionName, { idField: 'id'}).subscribe((recipe: any[]) => {
+      this.loader = false
       console.log("Fetched Recipe", recipe);
       this.recipe = recipe;
     })

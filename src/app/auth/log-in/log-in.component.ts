@@ -9,17 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent {
+  loader : boolean = false
   email: any;
   password: any;
   
   constructor(public firestore: Firestore, private router: Router, public auth: Auth){}
 
   async logIn() {
+    this.loader = true
     if (!this.email || !this.password) {
       alert('Please fill in both email and password.');
       return;
     }else{
       signInWithEmailAndPassword(this.auth, this.email, this.password).then(res => {
+        this.loader = false
         console.log(res)
         if(res.user.emailVerified) {
           localStorage.setItem("userDetails", JSON.stringify(res.user.uid))
