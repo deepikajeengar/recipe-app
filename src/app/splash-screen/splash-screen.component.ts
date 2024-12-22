@@ -7,13 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./splash-screen.component.css']
 })
 export class SplashScreenComponent implements OnInit{
- loader : boolean = false;
   constructor(private router: Router){}
 
   ngOnInit(): void{
-    this.loader = true
     setTimeout(() => {
-      this.loader = false;
       this.router.navigate(['/home']);
     }, 3000);
   }
