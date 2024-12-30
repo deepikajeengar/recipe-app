@@ -13,15 +13,16 @@
         <div class="mb-4">
             <label for="image" class="form-label">Upload recipe image</label>
             <div class="input-group">
-                <span class="input-group-text icon-bg" id="uploadIcon">📸</span>
-                <input type="file" name="image" [(ngModel)]="image" class="form-control" id="image" accept="image/*">
+                <img [src]="imageUrl" width="100%" alt="">
+                <input type="file" name="image" (change)="onFileSelected($event)" class="form-control" id="image" accept="image/*">
             </div>
         </div>
 
         <div class="mb-4">
             <label for="recipeDetails" class="form-label">Short Description</label>
-            <textarea class="form-control" id="recipeDetails" name="instructions" [(ngModel)]="shortDescription" rows="5" placeholder="List your ingredients and instructions here"></textarea>
-          </div>
+            <!-- <textarea class="form-control" id="recipeDetails" name="instructions" [(ngModel)]="shortDescription" rows="5" placeholder="List your ingredients and instructions here"></textarea> -->
+            <angular-editor [placeholder]="'List your ingredients and instructions here'" [config]="editorConfig" name = "description" [(ngModel)]="shortDescription"></angular-editor>   
+        </div>
 
         <div class="text-center">
             <button type="submit" *ngIf = "!categoryId" (click)="addCategory()" class="btn btn-primary rounded-pill submit-btn">Add category</button>

@@ -1,14 +1,22 @@
 <div class="custom-container">
-    <div class="container pt-4" >
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-8">
-                <h1>{{recipeDetails.name}}</h1>
-                <p class="card-text text-container">{{recipeDetails.instruction}}</p>
+    <div class="container pt-4">
+        <div class="card recipe-card shadow-lg">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img [src]="recipeDetails.image" alt="{{recipeDetails.name}}" class="img-fluid rounded-start recipe-image" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h1 class="card-title">{{recipeDetails.name}}</h1>
+                        <hr />
+                        <h5>Instructions:</h5>
+                        <p class="card-text" [innerHTML]="recipeDetails.instruction"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="loader-overlay" *ngIf="loader">
     <div class="spinner"></div>
-  </div>
+</div>

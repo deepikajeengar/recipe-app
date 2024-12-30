@@ -13,15 +13,16 @@
       <!-- Instructions and Ingredients -->
       <div class="mb-4">
         <label for="recipeDetails" class="form-label">Instructions and Ingredients</label>
-        <textarea class="form-control" id="recipeDetails" name="instructions" [(ngModel)]="instruction" rows="5" placeholder="List your ingredients and instructions here"></textarea>
+        <!-- <textarea class="form-control" id="recipeDetails" name="instructions" [(ngModel)]="instruction" rows="5" placeholder="List your ingredients and instructions here"></textarea> -->
+        <angular-editor [placeholder]="'List your ingredients and instructions here'" [config]="editorConfig" name = "description" [(ngModel)]="instruction"></angular-editor>   
       </div>
   
       <!-- Image Upload -->
       <div class="mb-4">
         <label for="recipeImage" class="form-label">Upload Recipe Image</label>
         <div class="input-group">
-          <span class="input-group-text icon-bg" id="uploadIcon">📸</span>
-          <input class="form-control" name="image" [(ngModel)]="image" type="file" id="recipeImage" accept="image/*" aria-describedby="uploadIcon">
+          <img [src]="imageUrl" width="100%" alt="">
+          <input class="form-control" name="image" (change)="onFileSelected($event)"  type="file" id="recipeImage" accept="image/*" aria-describedby="uploadIcon">
         </div>
       </div>
   

@@ -22,6 +22,19 @@ export class RecipeFeedComponent {
       this.loader = false
       console.log("Fetched Recipe", recipe);
       this.recipe = recipe;
+      console.log(recipe)
     })
   }
+
+  toggleLike(item: any): void {
+    item.isLiked = !item.isLiked;
+    // Save the state to a database or localStorage
+    this.saveLikeStatus(item.id, item.isLiked);
+  }
+  
+  saveLikeStatus(recipeId: number, isLiked: boolean): void {
+    // Example: Save to localStorage
+    localStorage.setItem(`recipe_${recipeId}_liked`, JSON.stringify(isLiked));
+  }
+  
 }

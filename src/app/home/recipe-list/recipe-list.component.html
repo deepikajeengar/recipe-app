@@ -3,10 +3,11 @@
     <div class="row">
         <div class="col-6 col-md-4 mb-4" *ngFor="let recipe of recipes">
             <div class="card">
-                <img src="https://t3.ftcdn.net/jpg/09/45/46/72/360_F_945467264_13rCx2nGR9wb9wrVt2g2FEFB4tE4b8sW.jpg" class="card-img-top" alt="Aloo Paratha" style="height: 250px; object-fit: cover;">
+                <img [src]="recipe.image || 'https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg'"
+                class="card-img-top product-image" alt="Product">
                 <div class="card-body text-center">
                     <h5 class="card-title">{{recipe.name}}</h5>
-                    <p class="card-text text-container">{{recipe.instruction}}</p>
+                    <p class="card-text text-container" [innerHTML] = "recipe.instruction">{{recipe.instruction}}</p>
                     <a routerLink="/recipe-details-page/recipe-details/{{recipe.id}}" class="btn btn-primary">View Recipe</a>
         <!-- <button type="submit" (click)="updateRecipe()" class="btn btn-primary btn-lg rounded-pill submit-btn">Update Recipe</button> -->
                 </div>

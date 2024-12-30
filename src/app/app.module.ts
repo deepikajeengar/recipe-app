@@ -30,7 +30,9 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { CategoriesListComponent } from './categories-form/categories-list/categories-list.component';
 import { AddCategoryComponent } from './categories-form/add-category/add-category.component';
-
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HttpClientModule} from '@angular/common/http';
+import { Cloudinary, CloudinaryModule } from '@cloudinary/angular-5.x';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,9 @@ import { AddCategoryComponent } from './categories-form/add-category/add-categor
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AngularEditorModule,
+    HttpClientModule,
+    CloudinaryModule.forRoot({ Cloudinary }, { cloud_name: 'dfu3sgwfo' }),
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp({
       apiKey: "AIzaSyD8xflMR9X30-NRcOanV0538c3ZcMBn4BU",

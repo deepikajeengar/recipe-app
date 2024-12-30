@@ -10,8 +10,6 @@ import { RecipeDetailsComponent } from './recipe-details-page/recipe-details/rec
 import { UserDasboardComponent } from './user-dasboard/user-dasboard.component';
 import { UserProfileComponent } from './user-dasboard/user-profile/user-profile.component';
 import { UserRecipePostComponent } from './user-dasboard/user-recipe-post/user-recipe-post.component';
-import { LikeComponent } from './user-dasboard/like/like.component';
-import { CommentComponent } from './user-dasboard/comment/comment.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { AddRecipeFormComponent } from './home/add-recipe-form/add-recipe-form.component';
 import { CategoriesFormComponent } from './categories-form/categories-form.component';
