@@ -35,7 +35,7 @@ routerLink="/categories-form">Add category</button>
         <h4>{{myRecipe.name}}</h4>
       </div>
       <div class="col-12">
-        <p>{{myRecipe.instruction}}</p>
+        <p [innerHTML] = "myRecipe.instruction">{{myRecipe.instruction}}</p>
       </div>
       <div class="col-6">
         <button class="btn btn-warning rounded-pill" routerLink="/home/edit-recipe-form/{{myRecipe.id}}">Edit</button>
