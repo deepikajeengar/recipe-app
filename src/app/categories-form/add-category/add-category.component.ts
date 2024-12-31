@@ -143,7 +143,7 @@ export class AddCategoryComponent {
     this.loader = true
     let data = {
       name: this.categoryName,
-      image: this.image,
+      // image: this.image,
       description: this.shortDescription
     }
     updateDoc(doc(this.firestore, "categories/" + this.categoryId), data).then(res => {

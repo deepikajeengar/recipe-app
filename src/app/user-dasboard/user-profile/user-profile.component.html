@@ -34,6 +34,9 @@ routerLink="/categories-form">Add category</button>
       <div class="col-12 my-auto">
         <h4>{{myRecipe.name}}</h4>
       </div>
+      
+        <img [src]="myRecipe.image || 'https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg'">
+      
       <div class="col-12">
         <p [innerHTML] = "myRecipe.instruction">{{myRecipe.instruction}}</p>
       </div>
