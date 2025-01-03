@@ -48,11 +48,12 @@ export class UserProfileComponent {
       const formData = new FormData();
       formData.append('file', this.selectedFile);
       formData.append('upload_preset', this.uploadPreset);
-
+      this.loader = true
       this.http.post(this.uploadUrl, formData).subscribe((res: any) => {
         data.image = res.url
         console.log(data)
         updateDoc(doc(this.firestore, "users" + "/" + this.userDetails.id), data).then(res => {
+          this.loader = false
           Swal.fire("User profile updated successfully!");
         }).catch((error) => {
           console.error("Error updating user profile:", error);
@@ -60,6 +61,7 @@ export class UserProfileComponent {
       })
     } else {
       updateDoc(doc(this.firestore, "users" + "/" + this.userDetails.id), data).then(res => {
+        this.loader = false
         Swal.fire("User profile updated successfully!");
       }).catch((error) => {
         console.error("Error updating user profile:", error);
