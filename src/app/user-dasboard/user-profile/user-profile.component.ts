@@ -60,6 +60,7 @@ export class UserProfileComponent {
         })
       })
     } else {
+      this.loader = true
       updateDoc(doc(this.firestore, "users" + "/" + this.userDetails.id), data).then(res => {
         this.loader = false
         Swal.fire("User profile updated successfully!");

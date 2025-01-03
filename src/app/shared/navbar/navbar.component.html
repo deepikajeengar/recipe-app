@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-            <h4>👤🚀</h4>
+            <h4><i class="bi bi-list"></i></h4>
         </button>
 
 
@@ -28,8 +28,8 @@
         
 
 
-        <form class="d-flex ms-auto" role="search">
-            <div class="d-flex">
+        <form class="d-flex ms-auto" style="width: 80%;" role="search">
+            <div class="d-flex" style="width: 100%;">
                 <input type="search" class="form-control" [(ngModel)] = "searchQuery" name="searchQuery" placeholder="Search for recipes" aria-label="Search" />
                 <button class="btn btn-outline search-btn" type="submit" (click)="onSearch()">
                     <i class="bi bi-search-heart-fill"></i>
