@@ -1,21 +1,66 @@
-
-
-.profile-image{
-  width: 100px;
-  min-height: 100px;
-  border-radius: 50%;
-  margin: auto;
-  margin-top: 40px;
-  border: 3px solid rosybrown;
-  background-size: cover;
+.text-container {
+  display: -webkit-box; /* Use flexbox for truncation */
+  -webkit-box-orient: vertical; /* Set the box orientation to vertical */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Show "..." at the end */
+  line-clamp: 5; /* Display only 3 lines (you can adjust this to 4) */
+  -webkit-line-clamp: 5; /* This works for WebKit-based browsers */
+  width: 100%; /* Adjust container width as needed */
 }
 
-
-/* Container for profile form */
-.profile-form-container {
+/* Profile Image Container */
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: auto;
   margin-top: 20px;
-  width: 100%;
+  border: 3px solid rosybrown;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f8f8;
+}
+
+/* Profile Image */
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fully fits within the circular border */
+  border-radius: 50%;
+}
+
+/* File Input */
+.profile-image input {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  cursor: pointer;
+  width: 100%; /* Allows clicking anywhere below the image */
+  height: 30px;
+  z-index: 10;
+}
+
+/* Upload Button */
+.upload-btn {
+  display: block;
+  margin: 15px auto;
+  padding: 5px 10px;
+  background-color: rosybrown;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+}
+
+.upload-btn:hover {
+  background-color: #b37a7a;
 }
 
 /* Form wrapper */
@@ -54,7 +99,7 @@
   color: white;
   border: none;
   width: 100%;
-  padding: 10px;
+  padding: 6px;
   font-size: 16px;
   font-weight: bold;
   border-radius: 50px;

@@ -16,7 +16,6 @@ export class AddRecipeFormComponent {
   loader: boolean = false;
   recipeName: any;
   instruction: any;
-  image: any;
   category: any;
   firebaseCollectionName: any;
   categories: any;
@@ -79,59 +78,57 @@ export class AddRecipeFormComponent {
 
   addRecipe() {
     this.loader = true
-    let data = {
+    let data: any = {
       name: this.recipeName,
       instruction: this.instruction,
-      image: this.image,
       category: this.category,
       userId: JSON.parse(localStorage.getItem("userDetails") as string)
     }
     console.log(data)
     this.firebaseCollectionName = collection(this.firestore, "recipe")
 
-    if(this.selectedFile){
+    if (this.selectedFile) {
       const formData = new FormData();
       formData.append('file', this.selectedFile);
       formData.append('upload_preset', this.uploadPreset);
-    
-     this.http.post(this.uploadUrl, formData).subscribe((res : any) => {
+
+      this.http.post(this.uploadUrl, formData).subscribe((res: any) => {
         data.image = res.url
         console.log(data)
-    addDoc(this.firebaseCollectionName, data).then(res => {
-      this.loader = false
-      Swal.fire("Recipe added successfully");
-      this.router.navigateByUrl("/home")
-      this.recipeName = null,
-        this.instruction = null,
-        this.image = null,
-        this.category = null
-    }).catch((error) => {
-      console.error("Error adding recipe", error)
-    });
-  })
-}else{
-  addDoc(this.firebaseCollectionName, data).then(res => {
-    this.loader = false
-    Swal.fire("Recipe added successfully");
-    this.router.navigateByUrl("/home")
-    this.recipeName = null,
-      this.instruction = null,
-      this.image = null,
-      this.category = null
-  }).catch((error) => {
-    console.error("Error adding recipe", error)
-  });
-}}
+        addDoc(this.firebaseCollectionName, data).then(res => {
+          this.loader = false
+          Swal.fire("Recipe added successfully");
+          this.router.navigateByUrl("/home")
+          this.recipeName = null,
+            this.instruction = null,
+            this.category = null
+        }).catch((error) => {
+          console.error("Error adding recipe", error)
+        });
+      })
+    } else {
+      addDoc(this.firebaseCollectionName, data).then(res => {
+        this.loader = false
+        Swal.fire("Recipe added successfully");
+        this.router.navigateByUrl("/home")
+        this.recipeName = null,
+          this.instruction = null,
+          this.category = null
+      }).catch((error) => {
+        console.error("Error adding recipe", error)
+      });
+    }
+  }
 
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
     console.log(this.selectedFile)
     const reader = new FileReader();
-        reader.onload = (e: ProgressEvent<FileReader>) => {
-          this.imageUrl = e.target?.result as string; // Preview ke liye set karein
-        };
-        reader.readAsDataURL(this.selectedFile);
+    reader.onload = (e: ProgressEvent<FileReader>) => {
+      this.imageUrl = e.target?.result as string; // Preview ke liye set karein
+    };
+    reader.readAsDataURL(this.selectedFile);
   }
 
 
@@ -148,19 +145,35 @@ export class AddRecipeFormComponent {
 
   updateRecipe() {
     this.loader = true
-    let data = {
+    let data : any = {
       name: this.recipeName,
       instruction: this.instruction,
-      // image: this.image,
       category: this.category,
       userId: JSON.parse(localStorage.getItem("userDetails") as string)
     }
-    updateDoc(doc(this.firestore, "recipe/" + this.recipeId), data).then(res => {
-      this.loader = false
-      Swal.fire("Your recipe is updated")
-      this.router.navigateByUrl("/user-dashboard")
-      console.log(res)
-    })
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('file', this.selectedFile);
+      formData.append('upload_preset', this.uploadPreset);
+
+      this.http.post(this.uploadUrl, formData).subscribe((res: any) => {
+        data.image = res.url
+        console.log(data)
+        updateDoc(doc(this.firestore, "recipe/" + this.recipeId), data).then(res => {
+          this.loader = false
+          Swal.fire("Your recipe is updated")
+          this.router.navigateByUrl("/user-dashboard")
+          console.log(res)
+        })
+      })
+    } else {
+      updateDoc(doc(this.firestore, "recipe/" + this.recipeId), data).then(res => {
+        this.loader = false
+        Swal.fire("Your recipe is updated")
+        this.router.navigateByUrl("/user-dashboard")
+        console.log(res)
+      })
+    }
   }
 
   getRecipe() {
@@ -175,8 +188,9 @@ export class AddRecipeFormComponent {
       this.recipeName = recipeDetails.name
       this.category = recipeDetails.category
       this.instruction = recipeDetails.instruction
+      this.imageUrl = recipeDetails.image
     })
   }
 
-  
+
 }

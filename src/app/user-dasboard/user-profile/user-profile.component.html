@@ -1,9 +1,22 @@
-<div class="profile-image"
-  style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+<div class="profile-image">
+  <img
+    [src]="imageUrl || 'https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg'"
+    alt="Profile Image">
 </div>
 
+<div class="container my-2">
+  <!-- Hidden File Input -->
+  <input type="file" id="fileInput" accept="image/*" style="display: none;" (change)="onFileSelected($event)" />
+
+  <!-- Update Profile Button -->
+  <label for="fileInput" class="btn btn-warning rounded-pill" style="background-color: #cc97f7; cursor: pointer;">
+    Update Profile image
+  </label>
+</div>
+
+
 <button class="btn btn-primary rounded-pill" *ngIf="userId == '8Y394XhY5OVRtSGi1N0ugFtB9Fl1'"
-routerLink="/categories-form">Add category</button>
+  routerLink="/categories-form">Add category</button>
 <br>
 
 <div class="profile-form-container justify-content-center">
@@ -25,8 +38,12 @@ routerLink="/categories-form">Add category</button>
 </div>
 
 <br>
+
+
+
 <div class="container">
-  <button class="btn btn-warning rounded-pill" style="  background-color: #cc97f7;" (click)="updateLoggedinUser()">Update profile</button>
+  <button class="btn btn-warning rounded-pill" style="  background-color: #cc97f7;"
+    (click)="updateLoggedinUser()">Update profile</button>
 
   <div class="form-container mt-4" *ngFor="let myRecipe of myRecipes">
 
@@ -34,11 +51,12 @@ routerLink="/categories-form">Add category</button>
       <div class="col-12 my-auto">
         <h4>{{myRecipe.name}}</h4>
       </div>
-      
-        <img [src]="myRecipe.image || 'https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg'">
-      
+
+      <img
+        [src]="myRecipe.image || 'https://cdn.vectorstock.com/i/1000v/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg'">
+
       <div class="col-12">
-        <p [innerHTML] = "myRecipe.instruction">{{myRecipe.instruction}}</p>
+        <p class="text-container" [innerHTML]="myRecipe.instruction">{{myRecipe.instruction}}</p>
       </div>
       <div class="col-6">
         <button class="btn btn-warning rounded-pill" routerLink="/home/edit-recipe-form/{{myRecipe.id}}">Edit</button>
