@@ -121,3 +121,8 @@ button:hover {
     max-width: 100%;
   }
 }
+
+
+.btn {
+  width: 200px!important;
+}

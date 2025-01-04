@@ -4,7 +4,7 @@
     alt="Profile Image">
 </div>
 
-<div class="container my-2">
+<div class="container my-2 text-center">
   <!-- Hidden File Input -->
   <input type="file" id="fileInput" accept="image/*" style="display: none;" (change)="onFileSelected($event)" />
 
@@ -14,12 +14,13 @@
   </label>
 </div>
 
-
-<button class="btn btn-primary rounded-pill" *ngIf="userId == '8Y394XhY5OVRtSGi1N0ugFtB9Fl1'"
-  routerLink="/categories-form">Add category</button>
+<div class="text-center">
+  <button class="btn btn-primary rounded-pill" *ngIf="userId == '8Y394XhY5OVRtSGi1N0ugFtB9Fl1'"
+    routerLink="/categories-form">Add category</button>
+</div>
 <br>
 
-<div class="profile-form-container justify-content-center">
+<div class="profile-form-container justify-content-center d-flex">
   <div class="form-container">
     <div class="row">
       <div class="col-3 my-auto">
@@ -42,8 +43,10 @@
 
 
 <div class="container">
-  <button class="btn btn-warning rounded-pill" style="  background-color: #cc97f7;"
-    (click)="updateLoggedinUser()">Update profile</button>
+  <div class="text-center">
+    <button class="btn btn-warning rounded-pill" style="  background-color: #cc97f7;"
+      (click)="updateLoggedinUser()">Update profile</button>
+  </div>
 
   <div class="form-container mt-4" *ngFor="let myRecipe of myRecipes">
 

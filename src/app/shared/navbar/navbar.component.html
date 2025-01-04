@@ -3,34 +3,48 @@
 
 
     <div class="container-fluid">
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+        <!-- For large screen -->
+        <button class="btn btn-primary d-none d-lg-block" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#largeoffcanvasWithBothOptions" aria-controls="largeoffcanvasWithBothOptions">
+            <h4><i class="bi bi-list"></i></h4>
+        </button>
+
+
+        <!-- This is for small screen -->
+        <button class="btn btn-primary d-block d-lg-none" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
             <h4><i class="bi bi-list"></i></h4>
         </button>
 
 
-
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <!-- This is for small screen -->
+        <div class="offcanvas offcanvas-start d-block d-lg-none" data-bs-scroll="true" tabindex="-1"
+            id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             <div class="offcanvas-header">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body text-center">
                 <h1 class="display-5 fw-bold">Unlimited Recipes 🍔🥗</h1>
                 <p class="mt-3 text-muted">"Ready to Cook Up Something Delicious? 🍳✨"</p>
-                <p class="mb-4">Dive into a world of mouthwatering recipes and start creating your culinary masterpiece today! Let's get cooking!</p>
+                <p class="mb-4">Dive into a world of mouthwatering recipes and start creating your culinary masterpiece
+                    today! Let's get cooking!</p>
                 <h2 class="text-warning">🌮🥞🍝🥐🥪🍹</h2>
                 <div class="d-flex justify-content-center gap-3 mt-4">
-                    <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold" routerLink="/auth/log-in" *ngIf="!userId" style="background: linear-gradient(45deg, #c6dbfd, #c2e9fb);">Log In</button>
-                    <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold text-white" *ngIf="userId" style="background: linear-gradient(45deg, #f5bcbd, #fad0c4);" (click)="logOut()">Log Out</button>
+                    <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold" routerLink="/auth/log-in"
+                        *ngIf="!userId" style="background: linear-gradient(45deg, #c6dbfd, #c2e9fb);">Log In</button>
+                    <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold text-white" *ngIf="userId"
+                        style="background: linear-gradient(45deg, #f5bcbd, #fad0c4);" (click)="logOut()">Log
+                        Out</button>
                 </div>
             </div>
         </div>
-        
+
 
 
         <form class="d-flex ms-auto" style="width: 80%;" role="search">
             <div class="d-flex" style="width: 100%;">
-                <input type="search" class="form-control" [(ngModel)] = "searchQuery" name="searchQuery" placeholder="Search for recipes" aria-label="Search" />
+                <input type="search" class="form-control" [(ngModel)]="searchQuery" name="searchQuery"
+                    placeholder="Search for recipes" aria-label="Search" />
                 <button class="btn btn-outline search-btn" type="submit" (click)="onSearch()">
                     <i class="bi bi-search-heart-fill"></i>
                 </button>
@@ -41,3 +55,24 @@
 
     </div>
 </nav>
+
+<!-- For large screen -->
+<div class="offcanvas offcanvas-start d- d-lg-block" data-bs-scroll="true" tabindex="-1"
+    id="largeoffcanvasWithBothOptions" aria-labelledby="largeoffcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body text-center">
+        <h1 class="display-5 fw-bold">Unlimited Recipes 🍔🥗</h1>
+        <p class="mt-3 text-muted">"Ready to Cook Up Something Delicious? 🍳✨"</p>
+        <p class="mb-4">Dive into a world of mouthwatering recipes and start creating your culinary masterpiece today!
+            Let's get cooking!</p>
+        <h2 class="text-warning">🌮🥞🍝🥐🥪🍹</h2>
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold" routerLink="/auth/log-in"
+                *ngIf="!userId" style="background: linear-gradient(45deg, #c6dbfd, #c2e9fb);">Log In</button>
+            <button type="button" class="btn px-4 py-2 rounded-pill shadow-lg fw-bold text-white" *ngIf="userId"
+                style="background: linear-gradient(45deg, #f5bcbd, #fad0c4);" (click)="logOut()">Log Out</button>
+        </div>
+    </div>
+</div>
