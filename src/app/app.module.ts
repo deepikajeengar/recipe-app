@@ -13,10 +13,8 @@ import { UserProfileComponent } from './user-dasboard/user-profile/user-profile.
 import { LikeComponent } from './user-dasboard/like/like.component';
 import { CommentComponent } from './user-dasboard/comment/comment.component';
 import { RecipeDetailsComponent } from './recipe-details-page/recipe-details/recipe-details.component';
-import { NotificationComponent } from './notification/notification.component';
 import { RecipeListComponent } from './home/recipe-list/recipe-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { TabComponent } from './shared/tab/tab.component';
 import { AddRecipeFormComponent } from './home/add-recipe-form/add-recipe-form.component';
@@ -48,9 +46,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     LikeComponent,
     CommentComponent,
     RecipeDetailsComponent,
-    NotificationComponent,
     RecipeListComponent,
-    SplashScreenComponent,
     NavbarComponent,
     TabComponent,
     AddRecipeFormComponent,
